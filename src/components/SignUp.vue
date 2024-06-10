@@ -3,16 +3,29 @@
     <h2>Sign Up</h2>
 
     <div class="register">
-        <input type="text" placeholder="Enter Name"/>
-        <input type="text" placeholder="Enter Email"/>
-        <input type="password" placeholder="Enter Password"/>
-        <button>Sign Up</button>
+        <input type="text" placeholder="Enter Name" v-model="name"/>
+        <input type="text" placeholder="Enter Email" v-model="email"/>
+        <input type="password" placeholder="Enter Password" v-model="password"/>
+        <button @click="signUp">Sign Up</button>
     </div>
 </template>
 
 <script>
 export default {
-    name : 'SignUp'
+    name : 'SignUp',
+
+    data() {
+        return {
+            name: '',
+            email: '',
+            password: ''
+        };
+    },
+    methods: {
+        signUp() {
+            console.log('Signing up');
+        }
+    }
 }
 </script>
 
